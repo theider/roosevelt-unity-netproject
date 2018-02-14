@@ -2,43 +2,29 @@
 using UnityEngine.Networking;
 
 public class ShipController : NetworkBehaviour {
+	
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
 
-	public Rigidbody rb;
-	public Transform t;
+	public Rigidbody rigidBody;
+
 	public float thrust = 2;
 	public float turnspeed = 30;
 
-	private Camera mainCamera;
-
 	void Start () {
-
-		mainCamera = Camera.main;
-
-		rb = GetComponent<Rigidbody> ();
-		t = GetComponent<Transform> ();
+		rigidBody = GetComponent<Rigidbody> ();
 	}
 
 	void FixedUpdate () {
 		//		if (!isLocalPlayer) {
 		//			return;
 		//		}
-
 		float speed = Input.GetAxisRaw ("Vertical"); //* Time.deltaTime;//
 		float rotation = Input.GetAxisRaw ("Horizontal");
 
-		Vector3 playerPos = t.position;
-		playerPos.x = playerPos.x + 15;
-		playerPos.z = playerPos.z + 15;
-		playerPos.y = 10;
-		mainCamera.transform.position = playerPos;
-		mainCamera.transform.LookAt (t.localPosition);
-
-		//float currentSpeed = rb.velocity.magnitude;
-		Vector3 rf = Vector3.forward * thrust * speed;
-		rb.AddRelativeForce (rf);
-		t.Rotate (0f, t.rotation.z + rotation, 0f);
+		Vector3 movementForce = Vector3.forward * thrust * speed;
+		rigidBody.AddRelativeForce (movementForce);
+		transform.Rotate (0f, transform.rotation.z + rotation, 0f);
 
 	}
 

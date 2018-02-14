@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 819259940}
   - component: {fileID: 819259939}
   - component: {fileID: 819259938}
+  - component: {fileID: 819259943}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -395,6 +396,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &819259943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819259937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b274e8f1cf74d93813cec11871bff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1149490021
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,13 +445,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1235829004883974, guid: a61ec697861e99346a900a0df28ee758,
     type: 2}
   bulletSpawn: {fileID: 1944881962}
-  rb: {fileID: 1149490023}
-  t: {fileID: 1149490029}
+  rigidBody: {fileID: 0}
   thrust: 8
   turnspeed: 30
-  rotationX: 0
-  rotationY: 0
-  rotationZ: 0
 --- !u!54 &1149490023
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -596,7 +604,7 @@ GameObject:
   - component: {fileID: 1442021740}
   - component: {fileID: 1442021739}
   m_Layer: 0
-  m_Name: Objects
+  m_Name: Cubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,7 +706,7 @@ GameObject:
   - component: {fileID: 1674821123}
   - component: {fileID: 1674821122}
   m_Layer: 0
-  m_Name: Objects (2)
+  m_Name: Red Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,7 +806,7 @@ GameObject:
   - component: {fileID: 1941700269}
   - component: {fileID: 1941700268}
   m_Layer: 0
-  m_Name: Objects (1)
+  m_Name: Green Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -927,7 +935,7 @@ GameObject:
   - component: {fileID: 2079188453}
   - component: {fileID: 2079188452}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
